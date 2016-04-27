@@ -12,6 +12,9 @@ import UIKit
 class TableViewCards: UITableViewCell {
     
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
     
     
     override func layoutSubviews() {
@@ -22,19 +25,13 @@ class TableViewCards: UITableViewCell {
         self.cardView.alpha = 1.0
         self.cardView.layer.masksToBounds = true
         self.cardView.layer.cornerRadius = 1; // if you like rounded corners
-        self.cardView.layer.shadowOffset = CGSizeMake(-0.2, 0.2); //%%% this shadow will hang slightly down and to the right
+        self.cardView.layer.shadowOffset = CGSizeMake(-10, 0); //%%% this shadow will hang slightly down and to the right
         self.cardView.layer.shadowRadius = 1; //%%% I prefer thinner, subtler shadows, but you can play with this
         self.cardView.layer.shadowOpacity = 0.2; //%%% same thing with this, subtle is better for me
         
         let path = UIBezierPath(rect: self.cardView.bounds)
         self.cardView.layer.shadowPath = path.CGPath
         
-        
-        
-    }
-    
-    override func setSelected(selected: Bool, animated: Bool) {
-        //if selected
     }
     
 }

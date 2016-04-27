@@ -18,6 +18,11 @@ class QuotaViewController: UITableViewController{
     let publicData = CKContainer.defaultContainer().publicCloudDatabase
     var performRefresh = 0
     
+    
+    // MARK: Labels
+    @IBOutlet weak var cardView: UIView!
+    
+    var labels = TableViewCards()
     // MARK: IBOUTLETS
     
     
@@ -147,9 +152,8 @@ class QuotaViewController: UITableViewController{
         return polls.count
     }
     
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCards
         
         if polls.count == 0 {
             return cell
@@ -161,12 +165,13 @@ class QuotaViewController: UITableViewController{
             let dateFormat = NSDateFormatter()
             dateFormat.dateFormat = "MM/dd/yyyy"
             let dateString = dateFormat.stringFromDate(poll.creationDate!)
-
-            cell.textLabel?.text = pollContent
-            cell.detailTextLabel?.text = dateString
+        
+            cell.titleLabel?.text = pollContent
+            cell.subTitleLabel?.text = String(dateString)
         }
         return cell
     }
+    
     
     
     

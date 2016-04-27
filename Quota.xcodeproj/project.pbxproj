@@ -47,6 +47,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E0CBD2401CD11E54007BD80F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E02ED8581CCF963C0093FFF6 /* popOverViewController.swift */,
+				E02ED8561CCF85B10093FFF6 /* QuotaBrain.swift */,
+				E0E279C01CCD769E002D678E /* Quota.entitlements */,
+				E0E279AB1CCD6672002D678E /* AppDelegate.swift */,
+				E0E279B71CCD6672002D678E /* LaunchScreen.storyboard */,
+				E0E279BA1CCD6672002D678E /* Info.plist */,
+				E0E279B21CCD6672002D678E /* Quota.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E0E2799F1CCD6672002D678E = {
 			isa = PBXGroup;
 			children = (
@@ -68,16 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */,
-				E02ED8581CCF963C0093FFF6 /* popOverViewController.swift */,
+				E0CBD2401CD11E54007BD80F /* Supporting Files */,
 				E0CBD23E1CD01EB7007BD80F /* TableViewCards.swift */,
-				E02ED8561CCF85B10093FFF6 /* QuotaBrain.swift */,
-				E0E279C01CCD769E002D678E /* Quota.entitlements */,
-				E0E279AB1CCD6672002D678E /* AppDelegate.swift */,
 				E0E279AF1CCD6672002D678E /* Main.storyboard */,
 				E0E279B51CCD6672002D678E /* Assets.xcassets */,
-				E0E279B71CCD6672002D678E /* LaunchScreen.storyboard */,
-				E0E279BA1CCD6672002D678E /* Info.plist */,
-				E0E279B21CCD6672002D678E /* Quota.xcdatamodeld */,
 			);
 			path = Quota;
 			sourceTree = "<group>";
