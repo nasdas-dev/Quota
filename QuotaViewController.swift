@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import CloudKit
+import SCLAlertView
+
 
 class QuotaViewController: UITableViewController{
     
@@ -18,6 +20,8 @@ class QuotaViewController: UITableViewController{
     let publicData = CKContainer.defaultContainer().publicCloudDatabase
     var performRefresh = 0
     
+    // MARK: Voting/Poll Options
+    var question = "nil"
     
     // MARK: Labels
     @IBOutlet weak var cardView: UIView!
@@ -168,6 +172,7 @@ class QuotaViewController: UITableViewController{
         
             cell.titleLabel?.text = pollContent
             cell.subTitleLabel?.text = String(dateString)
+            
         }
         return cell
     }
@@ -178,8 +183,13 @@ class QuotaViewController: UITableViewController{
     // MARK: - TableView actions -> PollOptions
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let poll = polls[indexPath.row]
+        let pollContent = poll["content"] as? String
         
         print("x")
+        
+
+        SCLAlertView().showInfo(pollContent!, subTitle: "Voting Options Here")
         
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83FD1DE7372C58C068E086B6 /* Pods_Quota.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A420D6FC14E10AC927E3E9DF /* Pods_Quota.framework */; };
+		AF394D7C1CD2B56F00C9D2EA /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */; };
+		AFEFCB4E1CD2BE0900F1923F /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEFCB4D1CD2BE0900F1923F /* SCLAlertView.framework */; };
 		E02ED8541CCE4A700093FFF6 /* QuotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */; };
 		E02ED8551CCE7E150093FFF6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02ED84F1CCE49000093FFF6 /* CloudKit.framework */; };
 		E02ED8571CCF85B10093FFF6 /* QuotaBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02ED8561CCF85B10093FFF6 /* QuotaBrain.swift */; };
@@ -20,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31CBBE5AAB15E44CD9AFE2CA /* Pods-Quota.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quota.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quota/Pods-Quota.release.xcconfig"; sourceTree = "<group>"; };
+		A420D6FC14E10AC927E3E9DF /* Pods_Quota.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quota.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
+		AFEFCB4D1CD2BE0900F1923F /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = "../../Library/Developer/Xcode/DerivedData/Quota-cttgbxndtqzwcncathldwkgykkdj/Build/Products/Debug-iphonesimulator/SCLAlertView.framework"; sourceTree = "<group>"; };
 		E02ED84F1CCE49000093FFF6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaViewController.swift; sourceTree = SOURCE_ROOT; };
 		E02ED8561CCF85B10093FFF6 /* QuotaBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaBrain.swift; sourceTree = "<group>"; };
@@ -33,6 +40,7 @@
 		E0E279B81CCD6672002D678E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0E279BA1CCD6672002D678E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0E279C01CCD769E002D678E /* Quota.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Quota.entitlements; sourceTree = "<group>"; };
+		EA3E1CBA13E61205D49E7D68 /* Pods-Quota.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quota.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quota/Pods-Quota.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,13 +48,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEFCB4E1CD2BE0900F1923F /* SCLAlertView.framework in Frameworks */,
 				E02ED8551CCE7E150093FFF6 /* CloudKit.framework in Frameworks */,
+				83FD1DE7372C58C068E086B6 /* Pods_Quota.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		192862B34E959B790D13E405 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA3E1CBA13E61205D49E7D68 /* Pods-Quota.debug.xcconfig */,
+				31CBBE5AAB15E44CD9AFE2CA /* Pods-Quota.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7EEF0FC48E484F9A5B25123F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFEFCB4D1CD2BE0900F1923F /* SCLAlertView.framework */,
+				A420D6FC14E10AC927E3E9DF /* Pods_Quota.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E0CBD2401CD11E54007BD80F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +95,8 @@
 				E02ED84F1CCE49000093FFF6 /* CloudKit.framework */,
 				E0E279AA1CCD6672002D678E /* Quota */,
 				E0E279A91CCD6672002D678E /* Products */,
+				192862B34E959B790D13E405 /* Pods */,
+				7EEF0FC48E484F9A5B25123F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +114,7 @@
 				E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */,
 				E0CBD2401CD11E54007BD80F /* Supporting Files */,
 				E0CBD23E1CD01EB7007BD80F /* TableViewCards.swift */,
+				AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */,
 				E0E279AF1CCD6672002D678E /* Main.storyboard */,
 				E0E279B51CCD6672002D678E /* Assets.xcassets */,
 			);
@@ -97,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0E279BD1CCD6672002D678E /* Build configuration list for PBXNativeTarget "Quota" */;
 			buildPhases = (
+				D63DECB706D4C72964BD425D /* Check Pods Manifest.lock */,
 				E0E279A41CCD6672002D678E /* Sources */,
 				E0E279A51CCD6672002D678E /* Frameworks */,
 				E0E279A61CCD6672002D678E /* Resources */,
+				22FD967DEF080ABD2EF2AB22 /* Embed Pods Frameworks */,
+				85CE0DF9E25583172D84E8DD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,12 +192,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E279B91CCD6672002D678E /* LaunchScreen.storyboard in Resources */,
+				AF394D7C1CD2B56F00C9D2EA /* PopUpView.xib in Resources */,
 				E0E279B61CCD6672002D678E /* Assets.xcassets in Resources */,
 				E0E279B11CCD6672002D678E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22FD967DEF080ABD2EF2AB22 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quota/Pods-Quota-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85CE0DF9E25583172D84E8DD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quota/Pods-Quota-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D63DECB706D4C72964BD425D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E0E279A41CCD6672002D678E /* Sources */ = {
@@ -288,6 +371,7 @@
 		};
 		E0E279BE1CCD6672002D678E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA3E1CBA13E61205D49E7D68 /* Pods-Quota.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Quota/Quota.entitlements;
@@ -302,6 +386,7 @@
 		};
 		E0E279BF1CCD6672002D678E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31CBBE5AAB15E44CD9AFE2CA /* Pods-Quota.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Quota/Quota.entitlements;

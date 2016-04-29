@@ -12,7 +12,7 @@ import UIKit
 class TableViewCards: UITableViewCell {
     
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UITextView!
     @IBOutlet weak var subTitleLabel: UILabel!
     
     @IBOutlet weak var borderImage: UIImageView!
