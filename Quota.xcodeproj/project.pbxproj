@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83FD1DE7372C58C068E086B6 /* Pods_Quota.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A420D6FC14E10AC927E3E9DF /* Pods_Quota.framework */; };
+		3DDEF3148B5FC9E75F48EE5D /* Pods_Quota.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A130704D36E49B27417F863 /* Pods_Quota.framework */; };
 		AF394D7C1CD2B56F00C9D2EA /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */; };
-		AFEFCB4E1CD2BE0900F1923F /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEFCB4D1CD2BE0900F1923F /* SCLAlertView.framework */; };
 		E02ED8541CCE4A700093FFF6 /* QuotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */; };
 		E02ED8551CCE7E150093FFF6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02ED84F1CCE49000093FFF6 /* CloudKit.framework */; };
-		E02ED8571CCF85B10093FFF6 /* QuotaBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02ED8561CCF85B10093FFF6 /* QuotaBrain.swift */; };
-		E02ED8591CCF963C0093FFF6 /* popOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02ED8581CCF963C0093FFF6 /* popOverViewController.swift */; };
+		E083E19D1CD403540073BCE9 /* VotingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E083E19C1CD403540073BCE9 /* VotingOptions.swift */; };
+		E0A237F21CD9717F00417172 /* SubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A237F11CD9717F00417172 /* SubmissionViewController.swift */; };
+		E0C732081CD8F15500D5D105 /* VoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C732071CD8F15500D5D105 /* VoteCell.swift */; };
 		E0CBD23F1CD01EB7007BD80F /* TableViewCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CBD23E1CD01EB7007BD80F /* TableViewCards.swift */; };
 		E0E279AC1CCD6672002D678E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E279AB1CCD6672002D678E /* AppDelegate.swift */; };
 		E0E279B11CCD6672002D678E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E279AF1CCD6672002D678E /* Main.storyboard */; };
@@ -24,13 +24,13 @@
 
 /* Begin PBXFileReference section */
 		31CBBE5AAB15E44CD9AFE2CA /* Pods-Quota.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quota.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quota/Pods-Quota.release.xcconfig"; sourceTree = "<group>"; };
-		A420D6FC14E10AC927E3E9DF /* Pods_Quota.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quota.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A130704D36E49B27417F863 /* Pods_Quota.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quota.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
-		AFEFCB4D1CD2BE0900F1923F /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = "../../Library/Developer/Xcode/DerivedData/Quota-cttgbxndtqzwcncathldwkgykkdj/Build/Products/Debug-iphonesimulator/SCLAlertView.framework"; sourceTree = "<group>"; };
 		E02ED84F1CCE49000093FFF6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaViewController.swift; sourceTree = SOURCE_ROOT; };
-		E02ED8561CCF85B10093FFF6 /* QuotaBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaBrain.swift; sourceTree = "<group>"; };
-		E02ED8581CCF963C0093FFF6 /* popOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popOverViewController.swift; sourceTree = "<group>"; };
+		E083E19C1CD403540073BCE9 /* VotingOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingOptions.swift; sourceTree = "<group>"; };
+		E0A237F11CD9717F00417172 /* SubmissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmissionViewController.swift; sourceTree = "<group>"; };
+		E0C732071CD8F15500D5D105 /* VoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteCell.swift; sourceTree = "<group>"; };
 		E0CBD23E1CD01EB7007BD80F /* TableViewCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCards.swift; path = ../TableViewCards.swift; sourceTree = "<group>"; };
 		E0E279A81CCD6672002D678E /* Quota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quota.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E279AB1CCD6672002D678E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,9 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFEFCB4E1CD2BE0900F1923F /* SCLAlertView.framework in Frameworks */,
 				E02ED8551CCE7E150093FFF6 /* CloudKit.framework in Frameworks */,
-				83FD1DE7372C58C068E086B6 /* Pods_Quota.framework in Frameworks */,
+				3DDEF3148B5FC9E75F48EE5D /* Pods_Quota.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,20 +65,9 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		7EEF0FC48E484F9A5B25123F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AFEFCB4D1CD2BE0900F1923F /* SCLAlertView.framework */,
-				A420D6FC14E10AC927E3E9DF /* Pods_Quota.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E0CBD2401CD11E54007BD80F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E02ED8581CCF963C0093FFF6 /* popOverViewController.swift */,
-				E02ED8561CCF85B10093FFF6 /* QuotaBrain.swift */,
 				E0E279C01CCD769E002D678E /* Quota.entitlements */,
 				E0E279AB1CCD6672002D678E /* AppDelegate.swift */,
 				E0E279B71CCD6672002D678E /* LaunchScreen.storyboard */,
@@ -96,7 +84,7 @@
 				E0E279AA1CCD6672002D678E /* Quota */,
 				E0E279A91CCD6672002D678E /* Products */,
 				192862B34E959B790D13E405 /* Pods */,
-				7EEF0FC48E484F9A5B25123F /* Frameworks */,
+				E47522C8DD21343D5B05A3F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,13 +100,24 @@
 			isa = PBXGroup;
 			children = (
 				E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */,
-				E0CBD2401CD11E54007BD80F /* Supporting Files */,
+				E0A237F11CD9717F00417172 /* SubmissionViewController.swift */,
+				E0C732071CD8F15500D5D105 /* VoteCell.swift */,
+				E083E19C1CD403540073BCE9 /* VotingOptions.swift */,
 				E0CBD23E1CD01EB7007BD80F /* TableViewCards.swift */,
 				AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */,
 				E0E279AF1CCD6672002D678E /* Main.storyboard */,
 				E0E279B51CCD6672002D678E /* Assets.xcassets */,
+				E0CBD2401CD11E54007BD80F /* Supporting Files */,
 			);
 			path = Quota;
+			sourceTree = "<group>";
+		};
+		E47522C8DD21343D5B05A3F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A130704D36E49B27417F863 /* Pods_Quota.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +132,7 @@
 				E0E279A51CCD6672002D678E /* Frameworks */,
 				E0E279A61CCD6672002D678E /* Resources */,
 				22FD967DEF080ABD2EF2AB22 /* Embed Pods Frameworks */,
-				85CE0DF9E25583172D84E8DD /* Copy Pods Resources */,
+				18B71BE494B233DC9F0D42A0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,6 +200,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		18B71BE494B233DC9F0D42A0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quota/Pods-Quota-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		22FD967DEF080ABD2EF2AB22 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,21 +228,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quota/Pods-Quota-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		85CE0DF9E25583172D84E8DD /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quota/Pods-Quota-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D63DECB706D4C72964BD425D /* Check Pods Manifest.lock */ = {
@@ -254,9 +253,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E279B41CCD6672002D678E /* Quota.xcdatamodeld in Sources */,
-				E02ED8571CCF85B10093FFF6 /* QuotaBrain.swift in Sources */,
+				E083E19D1CD403540073BCE9 /* VotingOptions.swift in Sources */,
+				E0C732081CD8F15500D5D105 /* VoteCell.swift in Sources */,
+				E0A237F21CD9717F00417172 /* SubmissionViewController.swift in Sources */,
 				E02ED8541CCE4A700093FFF6 /* QuotaViewController.swift in Sources */,
-				E02ED8591CCF963C0093FFF6 /* popOverViewController.swift in Sources */,
 				E0E279AC1CCD6672002D678E /* AppDelegate.swift in Sources */,
 				E0CBD23F1CD01EB7007BD80F /* TableViewCards.swift in Sources */,
 			);
@@ -373,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA3E1CBA13E61205D49E7D68 /* Pods-Quota.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Quota/Quota.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -388,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 31CBBE5AAB15E44CD9AFE2CA /* Pods-Quota.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Quota/Quota.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

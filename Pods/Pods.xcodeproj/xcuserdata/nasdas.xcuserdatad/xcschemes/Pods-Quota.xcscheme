@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9CF546CDD35ABBFF3F8814FE'
+               BlueprintIdentifier = '5EA91214CF61A63B6FC8DD68'
                BlueprintName = 'Pods-Quota'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Quota.framework'>

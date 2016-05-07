@@ -12,19 +12,92 @@ import CloudKit
 import SCLAlertView
 
 
+extension QuotaViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+ 
+    func collectionView(collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        
+        return 4
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView,
+                        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! VoteCell
+
+        let poll = polls[indexPath.row]
+        let votesContent = poll["votes"] as? [String]
+     
+        var from0To4 = 0
+        
+        cell.cellLabel.titleLabel?.text = votesContent![from0To4]
+        from0To4+=1
+
+        return cell
+
+        
+        
+        
+//        let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
+//        var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
+//        
+//        
+//        // MARK: - UICollectionViewDataSource protocol
+//        
+//        // tell the collection view how many cells to make
+//        func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//            return self.items.count
+//        }
+//        
+//        // make a cell for each cell index path
+//        func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//            
+//            // get a reference to our storyboard cell
+//            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MyCollectionViewCell
+//            
+//            // Use the outlet in our custom class to get a reference to the UILabel in the cell
+//            cell.myLabel.text = self.items[indexPath.item]
+//            cell.backgroundColor = UIColor.yellowColor() // make cell more visible in our example project
+//            
+//            return cell
+//        }
+        
+        
+        
+        
+        
+//
+//        if polls.count == 0 {
+//            return cell
+//        }
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        //let tableCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCards
+
+        let voteBoxDimensionH = CGFloat(60)
+        let voteBoxDimensionW = self.view.frame.size.width / 1.3
+
+        return CGSizeMake(voteBoxDimensionW, voteBoxDimensionH)
+    }
+    
+    
+    
+}
+
 class QuotaViewController: UITableViewController{
     
-    var brain = QuotaBrain()
+    
     var polls = [CKRecord]()
     var refresh: UIRefreshControl!
     let publicData = CKContainer.defaultContainer().publicCloudDatabase
     var performRefresh = 0
     
+    
     // MARK: Voting/Poll Options
     var question = "nil"
-    
-    // MARK: Labels
-    @IBOutlet weak var cardView: UIView!
     
     var labels = TableViewCards()
     // MARK: IBOUTLETS
@@ -33,7 +106,6 @@ class QuotaViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = .None
-        
 
         refresh = UIRefreshControl()
         refresh.attributedTitle = NSAttributedString(string:"Pull to refresh")
@@ -41,8 +113,20 @@ class QuotaViewController: UITableViewController{
         self.tableView.addSubview(refresh)
         
         loadData()
+     
+
+        
     }
+  
     
+    override func tableView(tableView: UITableView,
+                            willDisplayCell cell: UITableViewCell,
+                                            forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        guard let tableViewCell = cell as? TableViewCards else { return }
+        tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+        
+    }
 
     
     func loadData (){
@@ -72,43 +156,9 @@ class QuotaViewController: UITableViewController{
     
     @IBAction func SendPoll(sender: UIBarButtonItem) {
         
-        let alert = UIAlertController(title: "New Poll", message: "Enter A Question", preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler { (textField: UITextField) in
-            textField.placeholder = "Your Question"
-        }
+        navigationController?.popToViewController(SubmissionViewController(), animated: true)
         
         
-        
-        alert.addAction(UIAlertAction(title: "Send", style: .Default, handler: { (action:UIAlertAction) -> Void in
-            let textField = alert.textFields!.first!
-            if textField.text != ""{
-                let newPoll = CKRecord(recordType: "Poll")
-                newPoll["content"] = textField.text
-                
-                self.publicData.saveRecord(newPoll, completionHandler: { (record:CKRecord?, error:NSError?) in
-                    if error == nil{
-                        dispatch_async(dispatch_get_main_queue(), {
-                            
-                            self.tableView.beginUpdates()
-                            self.polls.insert(newPoll, atIndex: 0)
-                            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-                            self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
-                            self.tableView.endUpdates()
-                            
-                        })
-                    }
-                    else{
-                        print ("Error")
-                    }
-                })
-            }
-            
-        }))
-        
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        
-        self.presentViewController(alert, animated: true, completion: nil)
         
         
     }
@@ -117,22 +167,7 @@ class QuotaViewController: UITableViewController{
         return true
     }
     
-    
-    //   override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    //       if(editingStyle == UITableViewCellEditingStyle.Delete){
-    //            let indexPredicate = NSPredicate(block: <#T##(AnyObject, [String : AnyObject]?) -> Bool#>)
-    ////            let deleteQuery = CKQuery(recordType: "Poll", predicate: <#T##NSPredicate#>)
-    //             self.polls.removeAtIndex(indexPath.row)
-    //             self.publicData.delete(polls)
-    //
-    //            let deletePoll = CKRecordID(recordName: "Poll")
-    //            self.publicData.deleteRecordWithID(deletePoll, completionHandler: { (record: CKRecordID?, error: NSError?) in
-    //                if error == nil{}
-    //                self.tableView.reloadData()
-    //            })
-    
-    //       }
-    //   }
+
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -159,15 +194,16 @@ class QuotaViewController: UITableViewController{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCards
         
+        
         if polls.count == 0 {
             return cell
         }
         
         let poll = polls[indexPath.row]
-        if let pollContent = poll["content"] as? String{
+        if let pollContent = poll["question"] as? String{
             
             let dateFormat = NSDateFormatter()
-            dateFormat.dateFormat = "MM/dd/yyyy"
+            dateFormat.dateFormat = "dd/MM/yyyy"
             let dateString = dateFormat.stringFromDate(poll.creationDate!)
         
             cell.titleLabel?.text = pollContent
@@ -184,7 +220,7 @@ class QuotaViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let poll = polls[indexPath.row]
-        let pollContent = poll["content"] as? String
+        let pollContent = poll["question"] as? String
         
         print("x")
         
