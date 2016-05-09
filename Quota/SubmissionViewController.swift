@@ -24,41 +24,41 @@ class SubmissionViewController: UIViewController, UITextFieldDelegate, UIPickerV
 
     @IBOutlet weak var catPicker: UIPickerView!
     
-    @IBAction func submitButton(sender: UIButton) {
-       
-        votes = [pOption1.text!, pOption2.text!, pOption3.text!, pOption4.text!]
-        
-        if pollTitle.text != ""{
-        let newPoll = CKRecord(recordType: "Poll")
-       
-        newPoll["question"] = pollTitle.text
-        newPoll["votes"] = votes
-        
-
-        
-
-        QuotaView.publicData.saveRecord(newPoll, completionHandler: { (record:CKRecord?, error:NSError?) in
-            if error == nil{
-                dispatch_async(dispatch_get_main_queue(), {
-                    
-                    self.QuotaView.tableView.beginUpdates()
-                    self.QuotaView.polls.insert(newPoll, atIndex: 0)
-                    let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-                    self.QuotaView.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
-                    self.QuotaView.tableView.endUpdates()
-                    let refresh = self.QuotaView.refresh
-                    self.QuotaView.tableView.addSubview(refresh)
-                    
-                })
-            }
-            else{
-                print("Nothing")
-            }
-        })
-        navigationController?.popViewControllerAnimated(true)
-
-        }
-}
+//    @IBAction func submitButton(sender: UIButton) {
+//       
+//        votes = [pOption1.text!, pOption2.text!, pOption3.text!, pOption4.text!]
+//        
+//        if pollTitle.text != ""{
+//        let newPoll = CKRecord(recordType: "Poll")
+//       
+//        newPoll["question"] = pollTitle.text
+//        newPoll["votes"] = votes
+//        
+//
+//        
+//
+//        QuotaView.publicData.saveRecord(newPoll, completionHandler: { (record:CKRecord?, error:NSError?) in
+//            if error == nil{
+//                dispatch_async(dispatch_get_main_queue(), {
+//                    
+//                    self.QuotaView.collectionView.beginUpdates()
+//                    self.QuotaView.polls.insert(newPoll, atIndex: 0)
+//                    let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+//                    self.QuotaView.collectionView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
+//                    self.QuotaView.collectionView.endUpdates()
+//                    let refresh = self.QuotaView.refresh
+//                    self.QuotaView.collectionView!.addSubview(refresh)
+//                    
+//                })
+//            }
+//            else{
+//                print("Nothing")
+//            }
+//        })
+//        navigationController?.popViewControllerAnimated(true)
+//
+//        }
+//}
     
     
         

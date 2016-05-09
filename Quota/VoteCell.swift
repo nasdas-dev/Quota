@@ -10,12 +10,15 @@ import UIKit
 
 class VoteCell: UICollectionViewCell{
    
+    
     @IBOutlet weak var cellLabel: UIButton!
 
     @IBAction func touchedOption(sender: UIButton) {
         
         
     }
+    
+    
     
     
 

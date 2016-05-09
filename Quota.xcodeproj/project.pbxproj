@@ -11,10 +11,9 @@
 		AF394D7C1CD2B56F00C9D2EA /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */; };
 		E02ED8541CCE4A700093FFF6 /* QuotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */; };
 		E02ED8551CCE7E150093FFF6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02ED84F1CCE49000093FFF6 /* CloudKit.framework */; };
-		E083E19D1CD403540073BCE9 /* VotingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E083E19C1CD403540073BCE9 /* VotingOptions.swift */; };
 		E0A237F21CD9717F00417172 /* SubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A237F11CD9717F00417172 /* SubmissionViewController.swift */; };
 		E0C732081CD8F15500D5D105 /* VoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C732071CD8F15500D5D105 /* VoteCell.swift */; };
-		E0CBD23F1CD01EB7007BD80F /* TableViewCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CBD23E1CD01EB7007BD80F /* TableViewCards.swift */; };
+		E0D5092A1CE0FF4500AB68BB /* QuestionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D509291CE0FF4500AB68BB /* QuestionReusableView.swift */; };
 		E0E279AC1CCD6672002D678E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E279AB1CCD6672002D678E /* AppDelegate.swift */; };
 		E0E279B11CCD6672002D678E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E279AF1CCD6672002D678E /* Main.storyboard */; };
 		E0E279B41CCD6672002D678E /* Quota.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0E279B21CCD6672002D678E /* Quota.xcdatamodeld */; };
@@ -28,10 +27,9 @@
 		AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
 		E02ED84F1CCE49000093FFF6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaViewController.swift; sourceTree = SOURCE_ROOT; };
-		E083E19C1CD403540073BCE9 /* VotingOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingOptions.swift; sourceTree = "<group>"; };
 		E0A237F11CD9717F00417172 /* SubmissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmissionViewController.swift; sourceTree = "<group>"; };
 		E0C732071CD8F15500D5D105 /* VoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteCell.swift; sourceTree = "<group>"; };
-		E0CBD23E1CD01EB7007BD80F /* TableViewCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCards.swift; path = ../TableViewCards.swift; sourceTree = "<group>"; };
+		E0D509291CE0FF4500AB68BB /* QuestionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionReusableView.swift; sourceTree = "<group>"; };
 		E0E279A81CCD6672002D678E /* Quota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quota.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E279AB1CCD6672002D678E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E279B01CCD6672002D678E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,8 +100,7 @@
 				E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */,
 				E0A237F11CD9717F00417172 /* SubmissionViewController.swift */,
 				E0C732071CD8F15500D5D105 /* VoteCell.swift */,
-				E083E19C1CD403540073BCE9 /* VotingOptions.swift */,
-				E0CBD23E1CD01EB7007BD80F /* TableViewCards.swift */,
+				E0D509291CE0FF4500AB68BB /* QuestionReusableView.swift */,
 				AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */,
 				E0E279AF1CCD6672002D678E /* Main.storyboard */,
 				E0E279B51CCD6672002D678E /* Assets.xcassets */,
@@ -253,12 +250,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E279B41CCD6672002D678E /* Quota.xcdatamodeld in Sources */,
-				E083E19D1CD403540073BCE9 /* VotingOptions.swift in Sources */,
+				E0D5092A1CE0FF4500AB68BB /* QuestionReusableView.swift in Sources */,
 				E0C732081CD8F15500D5D105 /* VoteCell.swift in Sources */,
 				E0A237F21CD9717F00417172 /* SubmissionViewController.swift in Sources */,
 				E02ED8541CCE4A700093FFF6 /* QuotaViewController.swift in Sources */,
 				E0E279AC1CCD6672002D678E /* AppDelegate.swift in Sources */,
-				E0CBD23F1CD01EB7007BD80F /* TableViewCards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
