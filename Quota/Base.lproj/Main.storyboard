@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fWO-bh-L8a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fWO-bh-L8a">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -16,21 +16,21 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="Y2d-Na-8bv">
-                            <size key="itemSize" width="319" height="88"/>
+                            <size key="itemSize" width="319" height="50"/>
                             <size key="headerReferenceSize" width="50" height="55"/>
                             <size key="footerReferenceSize" width="50" height="55"/>
                             <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="hXt-Sn-2fA" customClass="VoteCell" customModule="Quota" customModuleProvider="target">
-                                <rect key="frame" x="141" y="139" width="319" height="88"/>
+                                <rect key="frame" x="141" y="139" width="319" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="319" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="319" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsB-Rq-XXP">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="50"/>
                                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <state key="normal" title="Voting Option"/>
@@ -38,14 +38,18 @@
                                                 <action selector="touchedOption:" destination="hXt-Sn-2fA" eventType="touchUpInside" id="eOh-fq-CFJ"/>
                                             </connections>
                                         </button>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UbS-q1-17i">
+                                            <rect key="frame" x="0.0" y="48" width="319" height="2"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
+                                        </progressView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="LsB-Rq-XXP" secondAttribute="trailing" id="8n4-PV-9c6"/>
-                                    <constraint firstItem="LsB-Rq-XXP" firstAttribute="leading" secondItem="hXt-Sn-2fA" secondAttribute="leading" id="Q9K-sY-95p"/>
-                                    <constraint firstItem="LsB-Rq-XXP" firstAttribute="top" secondItem="hXt-Sn-2fA" secondAttribute="top" id="R0m-mO-raW"/>
-                                    <constraint firstAttribute="bottom" secondItem="LsB-Rq-XXP" secondAttribute="bottom" id="gP6-FL-642"/>
+                                    <constraint firstItem="LsB-Rq-XXP" firstAttribute="top" secondItem="hXt-Sn-2fA" secondAttribute="top" id="3bS-Ab-Ax2"/>
+                                    <constraint firstItem="LsB-Rq-XXP" firstAttribute="leading" secondItem="hXt-Sn-2fA" secondAttribute="leading" id="LqN-Ww-bzl"/>
+                                    <constraint firstAttribute="bottom" secondItem="LsB-Rq-XXP" secondAttribute="bottom" id="PuU-M3-Zzd"/>
+                                    <constraint firstAttribute="trailing" secondItem="LsB-Rq-XXP" secondAttribute="trailing" id="chq-mu-Ug6"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="cellLabel" destination="LsB-Rq-XXP" id="Rby-4z-BgU"/>
@@ -73,7 +77,7 @@
                             </connections>
                         </collectionReusableView>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Spacing" id="RJc-G1-SNf">
-                            <rect key="frame" x="0.0" y="247" width="600" height="55"/>
+                            <rect key="frame" x="0.0" y="209" width="600" height="55"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </collectionReusableView>
@@ -180,7 +184,7 @@
                         <viewControllerLayoutGuide type="top" id="XoK-7s-QzV"/>
                         <viewControllerLayoutGuide type="bottom" id="EmX-mw-DZm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="x5F-UB-JMK" customClass="SubmissionView" customModule="Quota" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="x5F-UB-JMK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

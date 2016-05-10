@@ -96,7 +96,9 @@ class QuotaViewController: UICollectionViewController{
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! VoteCell
       
+        cell.layer.cornerRadius = 16.0
 
+        
         // This should give you the string that you want.
         let myString = votesContent![indexPath.item]
         

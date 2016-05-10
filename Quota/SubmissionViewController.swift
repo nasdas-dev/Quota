@@ -41,14 +41,12 @@ class SubmissionViewController: UIViewController, UITextFieldDelegate, UIPickerV
             if error == nil{
                 dispatch_async(dispatch_get_main_queue(), {
                     
-                    self.QuotaView.collectionView?.performBatchUpdates({
                         self.QuotaView.polls.insert(newPoll, atIndex: 0)
-                        }, completion: { (true) in
-//                            self.navigationController?.popViewControllerAnimated(true)
-//                            let refresh = self.QuotaView.refresh
-//                            self.QuotaView.collectionView!.addSubview(refresh)
-                            
-                    })
+                        self.navigationController?.popViewControllerAnimated(true)
+                        let refresh = self.QuotaView.refresh
+                        self.QuotaView.collectionView!.addSubview(refresh)
+                    
+                
                     
                 })
             }
