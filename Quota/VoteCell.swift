@@ -11,7 +11,7 @@ import UIKit
 class VoteCell: UICollectionViewCell{
    
     
-    @IBOutlet weak var cellLabel: UIButton!
+    @IBOutlet var cellLabel: UIButton!
 
     @IBAction func touchedOption(sender: UIButton) {
         
@@ -24,8 +24,7 @@ class VoteCell: UICollectionViewCell{
 
     func nameVoteOptions(name: String){
      
-        cellLabel.titleLabel?.text = name
-        
+        cellLabel.setTitle(name, forState: .Normal)
     
     }
     

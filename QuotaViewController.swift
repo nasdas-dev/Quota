@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import CloudKit
-import SCLAlertView
+
 
 class QuotaViewController: UICollectionViewController{
     
@@ -42,6 +42,40 @@ class QuotaViewController: UICollectionViewController{
         
     }
 
+    override func collectionView(collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                                                   atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let poll = polls[indexPath.section]
+        let pollContent = poll["question"] as? String
+
+        
+        
+        //1
+        switch kind {
+        //2
+        case UICollectionElementKindSectionHeader:
+            //3
+            let headerView =
+                collectionView.dequeueReusableSupplementaryViewOfKind(kind,
+                                                                      withReuseIdentifier: "Question",
+                                                                      forIndexPath: indexPath)
+                    as! QuestionReusableView
+            headerView.questionLabel.text = pollContent
+            return headerView
+        
+        case UICollectionElementKindSectionFooter:
+            let footerView =
+                collectionView.dequeueReusableSupplementaryViewOfKind(kind,
+                                                                      withReuseIdentifier: "Spacing",
+                                                                      forIndexPath: indexPath)
+            return footerView
+        default:
+            //4
+            assert(false, "Unexpected element kind")
+        }
+    }
+    
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         print(polls.count)
         return polls.count
@@ -57,27 +91,26 @@ class QuotaViewController: UICollectionViewController{
     
     override func collectionView(collectionView: UICollectionView,
                         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let poll2 = polls[indexPath.section]
+        let votesContent = poll2["votes"] as? [String]
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! VoteCell
-        let poll = polls[indexPath.section]
-        let votesContent = poll["votes"] as? [String]
-        let pollContent = poll["question"] as? String
-        
-        let headerCell = QuestionReusableView()
+      
 
         // This should give you the string that you want.
-        let myString = votesContent![indexPath.row]
+        let myString = votesContent![indexPath.item]
         
         // Display the string in the label.
-        cell.cellLabel.titleLabel?.text = myString
-        headerCell.questionLabel?.text = pollContent
+//        cell.cellLabel.titleLabel?.text = myString
+
+        cell.nameVoteOptions(myString)
         
         print(myString)
-        print(pollContent)
         return cell
         
 
     }
+    
     
     
     func loadData (){
@@ -102,6 +135,8 @@ class QuotaViewController: UICollectionViewController{
     }
 
 }
+
+
 
 //    
 //    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
