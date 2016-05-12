@@ -17,15 +17,24 @@ class VoteCell: UICollectionViewCell{
     
     @IBOutlet var cellLabel: UIButton!
 
-    @IBAction func touchedOption(sender: UIButton) {
-   
-        let pollRecord = CKRecordID(recordName: "868A3B09-B843-4890-BF0E-FEA68DCDE9A2")
-        
-        
-        
-        
-    }
-    
+//    @IBAction func touchedOption(sender: UIButton) {
+//   
+//
+//        let cell = sender.superview
+//        
+//        let indexPath =
+//        
+//        NSString *title = self.strings[indexPath.row];
+//        
+//        self.someLabel.text = title;
+//        
+//        print("Touched Cell")
+//        
+//        
+//        
+//        
+//    }
+//    
     
     
     

@@ -99,8 +99,8 @@
 			children = (
 				E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */,
 				E0A237F11CD9717F00417172 /* SubmissionViewController.swift */,
-				E0C732071CD8F15500D5D105 /* VoteCell.swift */,
 				E0D509291CE0FF4500AB68BB /* QuestionReusableView.swift */,
+				E0C732071CD8F15500D5D105 /* VoteCell.swift */,
 				AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */,
 				E0E279AF1CCD6672002D678E /* Main.storyboard */,
 				E0E279B51CCD6672002D678E /* Assets.xcassets */,

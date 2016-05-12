@@ -13,6 +13,40 @@ import CloudKit
 
 class QuotaViewController: UICollectionViewController{
     
+    @IBAction func touchedVoteCell(sender: UIButton) {
+        let cell = sender.superview?.superview as! UICollectionViewCell
+        let indexPath = self.collectionView?.indexPathForCell(cell)
+        
+        print("Touched Cell Nr: \(indexPath?.item)")
+        
+        let booksIncludedInVote = []
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Poll", predicate: predicate)
+        let queryOperation = CKQueryOperation(query: query)
+        queryOperation.desiredKeys = ["votePoints"]
+        queryOperation.queuePriority = .VeryHigh
+        queryOperation.resultsLimit = 1
+        queryOperation.recordFetchedBlock = { (record:CKRecord!) -> Void in
+                print("VotePoints: \(record.valueForKey(String))")
+        }
+        
+     
+//        operation.queryCompletionBlock = { cursor, error in
+//            self.tableView.ReloadData()
+//        }
+//        publicDatabase.addOperation(operation)
+//    }
+//    
+//    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+//        var record = self.booksIncludedInVote[indexPath.row]
+//        // now increment the voteCount value in that record and save it using
+//        publicDatabase.saveRecord(theRecord, completionHandler
+//    }
+        
+        
+        
+    }
     
     var polls = [CKRecord]()
     var refresh: UIRefreshControl!
@@ -102,10 +136,9 @@ class QuotaViewController: UICollectionViewController{
         // This should give you the string that you want.
         let myString = votesContent![indexPath.item]
         
-        // Display the string in the label.
-//        cell.cellLabel.titleLabel?.text = myString
-
+        // Display the string in the label
         cell.nameVoteOptions(myString)
+        
         
         print(myString)
         return cell
@@ -135,6 +168,9 @@ class QuotaViewController: UICollectionViewController{
             }
         }
     }
+    
+    
+    
 
 }
 
