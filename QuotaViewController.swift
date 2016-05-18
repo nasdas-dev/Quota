@@ -12,26 +12,36 @@ import CloudKit
 
 
 class QuotaViewController: UICollectionViewController{
-    
+    // MARK: IBOUTLETS
+
     @IBAction func touchedVoteCell(sender: UIButton) {
-        let cell = sender.superview?.superview as! UICollectionViewCell
-        let indexPath = self.collectionView?.indexPathForCell(cell)
         
-        print("Touched Cell Nr: \(indexPath?.item)")
+        let cell = sender.superview?.superview as! VoteCell
+        let indexPath = self.collectionView!.indexPathForCell(cell)
         
-        let booksIncludedInVote = []
+        let poll = polls[indexPath!.section] // Poll Cell -> first question: 1, 2nd: 2, ...
+        var pollVotes = poll["votesPoints"] as! [Int]
+//        
+//        let val = Int((pollVotes?[1])!)
+//        print(val)
+     
         
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Poll", predicate: predicate)
-        let queryOperation = CKQueryOperation(query: query)
-        queryOperation.desiredKeys = ["votePoints"]
-        queryOperation.queuePriority = .VeryHigh
-        queryOperation.resultsLimit = 1
-        queryOperation.recordFetchedBlock = { (record:CKRecord!) -> Void in
-                print("VotePoints: \(record.valueForKey(String))")
+        
+        func findValueToIncreaseByOne (array: [Int]) -> [Int] {
+        var modifiedArray = array
+        var valueToChange = array[(indexPath?.row)!]
+        valueToChange+=1
+        modifiedArray[(indexPath?.row)!] = valueToChange
+            return modifiedArray
         }
         
-     
+        poll["votesPoints"] = findValueToIncreaseByOne(pollVotes)
+
+        
+        let modifier = CKModifyRecordsOperation(recordsToSave: [poll], recordIDsToDelete: nil)
+        publicData.addOperation(modifier)
+        
+        
 //        operation.queryCompletionBlock = { cursor, error in
 //            self.tableView.ReloadData()
 //        }
@@ -43,10 +53,21 @@ class QuotaViewController: UICollectionViewController{
 //        // now increment the voteCount value in that record and save it using
 //        publicDatabase.saveRecord(theRecord, completionHandler
 //    }
+
         
+        //Cell Appearance
         
+        cell.updateVoteCount(indexPath!, pollVotes: pollVotes)
+        collectionView?.reloadData()
+//        VoteCell().reloadInputViews()
+//
+//
+//        let totalAmountOfVotes = addAllVotes(pollVotes)
+//        cell.progressView.progress = Float((pollVotes[(indexPath?.row)!]))/Float(totalAmountOfVotes) //MAGIC
+//        
         
     }
+    
     
     var polls = [CKRecord]()
     var refresh: UIRefreshControl!
@@ -58,7 +79,7 @@ class QuotaViewController: UICollectionViewController{
     // MARK: Voting/Poll Options
     var question = "nil"
     
-    // MARK: IBOUTLETS
+    
     
     
     override func viewDidLoad() {
@@ -69,12 +90,33 @@ class QuotaViewController: UICollectionViewController{
         refresh.attributedTitle = NSAttributedString(string:"Pull to refresh")
         refresh.addTarget(self, action: #selector(QuotaViewController.loadData), forControlEvents: .ValueChanged)
         self.collectionView!.addSubview(refresh)
-        
         loadData()
-     
+
 
         
     }
+    
+    
+    func addAllVotes (array: [Int]) -> Int{
+        
+        var totalValue = 0
+        for votes in array{
+            
+            totalValue += votes
+            
+        }
+        
+        
+        return totalValue
+    }
+    
+    func updateVoteCount(){
+    
+        
+    
+    
+    }
+    
 
     override func collectionView(collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
@@ -124,9 +166,10 @@ class QuotaViewController: UICollectionViewController{
     }
     
     override func collectionView(collectionView: UICollectionView,
-                        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+                        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         let poll2 = polls[indexPath.section]
         let votesContent = poll2["votes"] as? [String]
+        let pollVotes = poll2["votesPoints"] as! [Int]
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! VoteCell
       
@@ -136,16 +179,23 @@ class QuotaViewController: UICollectionViewController{
         // This should give you the string that you want.
         let myString = votesContent![indexPath.item]
         
+        
         // Display the string in the label
         cell.nameVoteOptions(myString)
+
         
+        cell.updateVoteCount(indexPath, pollVotes: pollVotes)
+
+        //
+//        let totalAmountOfVotes = addAllVotes(pollVotes)
+//        cell.progressView.progress = Float((pollVotes[(indexPath.row)]))/Float(totalAmountOfVotes) //MAGIC
+//        
         
         print(myString)
         return cell
         
 
     }
-    
     
     
     func loadData (){

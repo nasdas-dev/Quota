@@ -13,6 +13,7 @@ class VoteCell: UICollectionViewCell{
    
     
     
+    @IBOutlet weak var progressView: UIProgressView!
     
     
     @IBOutlet var cellLabel: UIButton!
@@ -36,6 +37,14 @@ class VoteCell: UICollectionViewCell{
 //    }
 //    
     
+    func updateVoteCount(indexPath: NSIndexPath, pollVotes: [Int]) {
+
+        let totalAmountOfVotes = QuotaViewController().addAllVotes(pollVotes)
+        
+        progressView.progress = Float((pollVotes[(indexPath.row)]))/Float(totalAmountOfVotes) //MAGIC
+        
+
+    }
     
     
     

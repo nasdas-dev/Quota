@@ -10,69 +10,19 @@ import UIKit
 import CloudKit
 
 
-class SubmissionViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-    
-    @IBOutlet weak var pollTitle: UITextField!
-    
-    @IBOutlet weak var pOption1: UITextField!
-    @IBOutlet weak var pOption2: UITextField!
-    @IBOutlet weak var pOption3: UITextField!
-    @IBOutlet weak var pOption4: UITextField!
-    var votes = []
-
+    @IBOutlet weak var setCategoryLabel: UILabel!
     @IBOutlet weak var catPicker: UIPickerView!
     
-    @IBAction func submitButton(sender: UIButton) {
-       
-        votes = [pOption1.text!, pOption2.text!, pOption3.text!, pOption4.text!]
-        
-        if pollTitle.text != ""{
-        let newPoll = CKRecord(recordType: "Poll")
-       
-        newPoll["question"] = pollTitle.text
-        newPoll["votes"] = votes
-        
-
-        
-
-        QuotaView.publicData.saveRecord(newPoll, completionHandler: { (record:CKRecord?, error:NSError?) in
-            if error == nil{
-                dispatch_async(dispatch_get_main_queue(), {
-                    
-                        self.QuotaView.polls.insert(newPoll, atIndex: 0)
-                        self.navigationController?.popViewControllerAnimated(true)
-                        let refresh = self.QuotaView.refresh
-                        self.QuotaView.collectionView!.addSubview(refresh)
-                    
-                
-                    
-                })
-            }
-            else{
-                print("Nothing")
-            }
-        })
-
-        }
-}
     
-    
-        
-
     var catPickerData = []
     var QuotaView = QuotaViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pollTitle.delegate = self
-        pOption1.delegate = self
-        pOption2.delegate = self
-        pOption3.delegate = self
-        pOption4.delegate = self
         categoriesDefine()
-        
+        setCategoryLabel.text = "Set a category"
         
         
         // Init PickerView Data
@@ -96,10 +46,6 @@ class SubmissionViewController: UIViewController, UITextFieldDelegate, UIPickerV
         self.catPicker.delegate = self
         self.catPicker.dataSource = self
         
-        
-      
-        
-    
         
     }
     // - MARK: UIPickerView
