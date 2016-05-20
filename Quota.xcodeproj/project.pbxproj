@@ -12,6 +12,7 @@
 		E02ED8541CCE4A700093FFF6 /* QuotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */; };
 		E02ED8551CCE7E150093FFF6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02ED84F1CCE49000093FFF6 /* CloudKit.framework */; };
 		E040D2861CE689AD00F60433 /* ContainerViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040D2851CE689AD00F60433 /* ContainerViewTableViewController.swift */; };
+		E05591F71CEE01D600E9C364 /* AddAnotherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05591F61CEE01D600E9C364 /* AddAnotherTableViewCell.swift */; };
 		E07724381CE7DE9A0048A886 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07724371CE7DE9A0048A886 /* TitleViewController.swift */; };
 		E0775EEF1CE6148F0061BFB1 /* SubmissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0775EEE1CE6148F0061BFB1 /* SubmissionTableViewController.swift */; };
 		E0918CDB1CEA0CFE00C9A5D3 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0918CDA1CEA0CFE00C9A5D3 /* TagsViewController.swift */; };
@@ -32,6 +33,7 @@
 		E02ED84F1CCE49000093FFF6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaViewController.swift; sourceTree = SOURCE_ROOT; };
 		E040D2851CE689AD00F60433 /* ContainerViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewTableViewController.swift; sourceTree = "<group>"; };
+		E05591F61CEE01D600E9C364 /* AddAnotherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnotherTableViewCell.swift; sourceTree = "<group>"; };
 		E07724371CE7DE9A0048A886 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		E0775EEE1CE6148F0061BFB1 /* SubmissionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmissionTableViewController.swift; sourceTree = "<group>"; };
 		E0918CDA1CEA0CFE00C9A5D3 /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				E040D2851CE689AD00F60433 /* ContainerViewTableViewController.swift */,
 				E0A237F11CD9717F00417172 /* PickerViewController.swift */,
 				E07724371CE7DE9A0048A886 /* TitleViewController.swift */,
+				E05591F61CEE01D600E9C364 /* AddAnotherTableViewCell.swift */,
 				E0918CDA1CEA0CFE00C9A5D3 /* TagsViewController.swift */,
 			);
 			name = Submission;
@@ -276,6 +279,7 @@
 				E0C732081CD8F15500D5D105 /* VoteCell.swift in Sources */,
 				E0A237F21CD9717F00417172 /* PickerViewController.swift in Sources */,
 				E02ED8541CCE4A700093FFF6 /* QuotaViewController.swift in Sources */,
+				E05591F71CEE01D600E9C364 /* AddAnotherTableViewCell.swift in Sources */,
 				E0918CDB1CEA0CFE00C9A5D3 /* TagsViewController.swift in Sources */,
 				E040D2861CE689AD00F60433 /* ContainerViewTableViewController.swift in Sources */,
 				E0E279AC1CCD6672002D678E /* AppDelegate.swift in Sources */,

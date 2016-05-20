@@ -10,11 +10,25 @@ import UIKit
 import CloudKit
 
 
+protocol setCategoryDelegate{
+    func userSetCategory(category: String)
+}
+
+
 class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    var pickerDelegate: setCategoryDelegate!
     
     @IBOutlet weak var setCategoryLabel: UILabel!
     @IBOutlet weak var catPicker: UIPickerView!
     
+    @IBAction func saveButton(sender: UIBarButtonItem) {
+        
+        let information = catPicker.selectedRowInComponent(0)
+        print(catPickerData[information])
+        pickerDelegate.userSetCategory(catPickerData[information] as! String)
+        self.navigationController?.popViewControllerAnimated(true)
+
+    }
     
     var catPickerData = []
     var QuotaView = QuotaViewController()

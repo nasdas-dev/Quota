@@ -10,7 +10,18 @@ import UIKit
 
 
 
-class ContainerViewTableViewController: UITableViewController {
+class ContainerViewTableViewController: UITableViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
+    
+    @IBAction func addOtherAnswerButton(sender: UIButton) {
+
+        let newString = AddAnotherTableViewCell().addAnswerTextField.text
+        votingOptions.append(newString!)
+        tableView.beginUpdates()
+        print(votingOptions)
+        
+    }
+    
+    
     var votingOptions = ["Voting Option 1", "Voting Option 2", "Voting Option 3", "Voting Option 4"]
     var hideCellAllowed: Bool! = false
     
@@ -23,16 +34,16 @@ class ContainerViewTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         let longpress = UILongPressGestureRecognizer(target: self, action: #selector(ContainerViewTableViewController.longPressGestureRecognized(_:)))
+        tableView.addGestureRecognizer(longpress)
         
-        
-       tableView.addGestureRecognizer(longpress)
-
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func longPressGestureRecognized(gestureRecognizer: UIGestureRecognizer) {
         struct My {
@@ -58,109 +69,113 @@ class ContainerViewTableViewController: UITableViewController {
         
         
         
+        
+        switch state {
             
-            switch state {
+            
+        case UIGestureRecognizerState.Changed:
+            if indexPath != nil{
+                var center = My.cellSnapshot!.center
+                
+                center.y = locationInView.y
+                
+                My.cellSnapshot!.center = center
+                
+                if ((indexPath != nil) && (indexPath != Path.initialIndexPath)) {
+                    
+                    swap(&votingOptions[indexPath!.row], &votingOptions[Path.initialIndexPath!.row])
+                    
+                    tableView.moveRowAtIndexPath(Path.initialIndexPath!, toIndexPath: indexPath!)
+                    
+                    Path.initialIndexPath = indexPath
+                    
+                }
+               
+            }
+            
+        case UIGestureRecognizerState.Began:
+            
+            
+            if indexPath != nil && indexPath!.section == 0{
+                
+                Path.initialIndexPath = indexPath
+                
+                let cell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!
+                
+                My.cellSnapshot  = snapshopOfCell(cell)
+                
+                var center = cell.center
+                
+                My.cellSnapshot!.center = center
+                
+                My.cellSnapshot!.alpha = 0.0
+                
+                tableView.addSubview(My.cellSnapshot!)
+                cell.hidden = true
                 
                 
-            case UIGestureRecognizerState.Changed:
-                if indexPath != nil && indexPath!.section == 0{
-                    var center = My.cellSnapshot!.center
+                UIView.animateWithDuration(0.25, animations: { () -> Void in
                     
                     center.y = locationInView.y
                     
                     My.cellSnapshot!.center = center
                     
-                    if ((indexPath != nil) && (indexPath != Path.initialIndexPath)) {
-                        
-                        swap(&votingOptions[indexPath!.row], &votingOptions[Path.initialIndexPath!.row])
-                        
-                        tableView.moveRowAtIndexPath(Path.initialIndexPath!, toIndexPath: indexPath!)
-                        
-                        Path.initialIndexPath = indexPath
-                        
-                    }
-                }
-                
-            case UIGestureRecognizerState.Began:
-                
-             
-                if indexPath != nil && indexPath!.section == 0{
+                    My.cellSnapshot!.transform = CGAffineTransformMakeScale(1.05, 1.05)
                     
-                    Path.initialIndexPath = indexPath
-                    
-                    let cell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!
-                    
-                    My.cellSnapshot  = snapshopOfCell(cell)
-                    
-                    var center = cell.center
-                    
-                    My.cellSnapshot!.center = center
-                    
-                    My.cellSnapshot!.alpha = 0.0
-                    
-                    tableView.addSubview(My.cellSnapshot!)
-                    
-                    
-                    
-                    UIView.animateWithDuration(0.25, animations: { () -> Void in
-                        
-                        center.y = locationInView.y
-                        
-                        My.cellSnapshot!.center = center
-                        
-                        My.cellSnapshot!.transform = CGAffineTransformMakeScale(1.05, 1.05)
-                        
-                        My.cellSnapshot!.alpha = 0.98
-                        
-                        cell.alpha = 0.0
-                        
-                        
-                        
-                        }, completion: { (finished) -> Void in
-                            
-                            if finished && self.hideCellAllowed == true {
-                                cell.hidden = true
-                            }
-                            
-                    })
-                }
-                else{
-                    break}
-                
-            default:
-                
-                hideCellAllowed = false
-                if indexPath != nil && indexPath!.section == 0{
-                    let cell = tableView.cellForRowAtIndexPath(Path.initialIndexPath!) as UITableViewCell!
-                    
-                    cell.hidden = false
+                    My.cellSnapshot!.alpha = 0.98
                     
                     cell.alpha = 0.0
                     
-                    UIView.animateWithDuration(0.25, animations: { () -> Void in
+                    
+                    
+                    }, completion: { (finished) -> Void in
                         
-                        My.cellSnapshot!.center = cell.center
+                        if finished && self.hideCellAllowed == true {
+                            cell.hidden = true
+                        }
                         
-                        My.cellSnapshot!.transform = CGAffineTransformIdentity
+                })
+            }
+            
+            
+            
+            
+            
+        default:
+            
+            
+            hideCellAllowed = false
+            if indexPath != nil && indexPath!.section == 0{
+                let cell = tableView.cellForRowAtIndexPath(Path.initialIndexPath!) as UITableViewCell!
+                
+                cell.hidden = false
+                
+                cell.alpha = 0.0
+                
+                UIView.animateWithDuration(0.25, animations: { () -> Void in
+                    
+                    My.cellSnapshot!.center = cell.center
+                    
+                    My.cellSnapshot!.transform = CGAffineTransformIdentity
+                    
+                    My.cellSnapshot!.alpha = 0.0
+                    
+                    cell.alpha = 1.0
+                    
+                    }, completion: { (finished) -> Void in
                         
-                        My.cellSnapshot!.alpha = 0.0
-                        
-                        cell.alpha = 1.0
-                        
-                        }, completion: { (finished) -> Void in
+                        if finished {
                             
-                            if finished {
-                                
-                                Path.initialIndexPath = nil
-                                
-                                My.cellSnapshot!.removeFromSuperview()
-                                
-                                My.cellSnapshot = nil
-                                
-                            }
+                            Path.initialIndexPath = nil
                             
-                    })
-                }}
+                            My.cellSnapshot!.removeFromSuperview()
+                            
+                            My.cellSnapshot = nil
+                            
+                        }
+                        
+                })
+            }}
         
     }
     func snapshopOfCell(inputView: UIView) -> UIView {
@@ -214,11 +229,8 @@ class ContainerViewTableViewController: UITableViewController {
         
         
         let cell2 = tableView.dequeueReusableCellWithIdentifier("addOther")
-        cell2!.textLabel?.text = "Add Other..."
-        cell2!.textLabel?.textColor = UIColor.blueColor()
         
         // Configure the cell...
-        
         
         if indexPath.section == 0 {
             displayCell = cell

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubmissionTableViewController: UITableViewController, titleEnteredDelegate {
+class SubmissionTableViewController: UITableViewController, titleEnteredDelegate, setCategoryDelegate {
     
     //MARK: IBOUTLETS
     
@@ -28,6 +28,13 @@ class SubmissionTableViewController: UITableViewController, titleEnteredDelegate
     func userEnteredTitle(title: String) {
             titleCell.detailTextLabel?.text = title
     }
+    
+    func userSetCategory(category: String){
+            categoryCell.detailTextLabel?.text = category
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +59,18 @@ class SubmissionTableViewController: UITableViewController, titleEnteredDelegate
         if segue.identifier == "TitleSegue"{
         
             let titleVC = segue.destinationViewController as! TitleViewController
-            titleVC.delegate = self
+            titleVC.titleDelegate = self
         
             
         }
+        if segue.identifier == "SetCategory"{
+            
+            let pickerVC = segue.destinationViewController as! PickerViewController
+            pickerVC.pickerDelegate = self
+            
+            
+        }
+        
     }
     // MARK: - Table view data source
 

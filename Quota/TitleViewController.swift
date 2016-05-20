@@ -23,9 +23,9 @@ protocol titleEnteredDelegate {
     func userEnteredTitle(title: String)
 }
 
-
 class TitleViewController: UIViewController {
-    var delegate: titleEnteredDelegate!
+    var titleDelegate: titleEnteredDelegate!
+    
 
     
     //MARK: IBOUTLETS
@@ -39,7 +39,7 @@ class TitleViewController: UIViewController {
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
             let information = contentTextView.text
-            delegate.userEnteredTitle(information)
+            titleDelegate.userEnteredTitle(information)
             self.navigationController?.popViewControllerAnimated(true)
     
             
