@@ -6,6 +6,90 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Collection View Controller-->
+        <scene sceneID="wGU-as-w07">
+            <objects>
+                <collectionViewController id="caC-jc-e3d" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3Ab-nX-woB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="eSq-av-tjr">
+                            <size key="itemSize" width="320" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="55"/>
+                            <size key="footerReferenceSize" width="50" height="55"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="SLg-BJ-fjg" customClass="VoteCell" customModule="Quota" customModuleProvider="target">
+                                <rect key="frame" x="140" y="75" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kff-fQ-l6z">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <state key="normal" title="Voting Option"/>
+                                            <connections>
+                                                <action selector="touchedVoteCell:" destination="IhX-MU-TOt" eventType="touchUpInside" id="8Dm-5e-QNs"/>
+                                            </connections>
+                                        </button>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tCV-mp-ifc">
+                                            <rect key="frame" x="0.0" y="48" width="319" height="2"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
+                                        </progressView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kff-fQ-l6z" secondAttribute="trailing" id="1iY-Qt-gnK"/>
+                                    <constraint firstItem="kff-fQ-l6z" firstAttribute="top" secondItem="SLg-BJ-fjg" secondAttribute="top" id="55b-eB-bq1"/>
+                                    <constraint firstItem="kff-fQ-l6z" firstAttribute="leading" secondItem="SLg-BJ-fjg" secondAttribute="leading" id="7rL-qn-a3Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="kff-fQ-l6z" secondAttribute="bottom" id="oTE-Nf-vW5"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="cellLabel" destination="kff-fQ-l6z" id="pjs-u1-pky"/>
+                                    <outlet property="progressView" destination="tCV-mp-ifc" id="cnl-le-uYz"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Question" id="d5m-Xg-KP4" customClass="QuestionReusableView" customModule="Quota" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-YA-Uyb">
+                                    <rect key="frame" x="8" y="17" width="69" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="Bha-YA-Uyb" firstAttribute="centerY" secondItem="d5m-Xg-KP4" secondAttribute="centerY" id="IvD-Uu-3uM"/>
+                                <constraint firstItem="Bha-YA-Uyb" firstAttribute="leading" secondItem="d5m-Xg-KP4" secondAttribute="leadingMargin" id="ss4-Em-EgF"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="questionLabel" destination="Bha-YA-Uyb" id="jL1-bq-JZp"/>
+                            </connections>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="moreInfos" id="D0B-sa-ojH">
+                            <rect key="frame" x="0.0" y="145" width="600" height="55"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="caC-jc-e3d" id="TU2-GS-nDQ"/>
+                            <outlet property="delegate" destination="caC-jc-e3d" id="qLG-yv-GSP"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFh-gr-UpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3138" y="-269"/>
+        </scene>
         <!--Quota-->
         <scene sceneID="7vY-tf-FR6">
             <objects>
@@ -16,22 +100,22 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="Y2d-Na-8bv">
-                            <size key="itemSize" width="319" height="50"/>
+                            <size key="itemSize" width="320" height="50"/>
                             <size key="headerReferenceSize" width="50" height="55"/>
-                            <size key="footerReferenceSize" width="50" height="55"/>
+                            <size key="footerReferenceSize" width="50" height="95"/>
                             <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="hXt-Sn-2fA" customClass="VoteCell" customModule="Quota" customModuleProvider="target">
-                                <rect key="frame" x="141" y="139" width="319" height="50"/>
+                                <rect key="frame" x="140" y="139" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="319" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsB-Rq-XXP">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="50"/>
-                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <state key="normal" title="Voting Option"/>
                                             <connections>
@@ -62,25 +146,42 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wp3-q7-Jj8">
-                                    <rect key="frame" x="8" y="17" width="69" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <rect key="frame" x="8" y="15" width="584" height="25"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="wp3-q7-Jj8" firstAttribute="centerY" secondItem="dFK-hQ-E2O" secondAttribute="centerY" id="PC3-2Q-Jma"/>
-                                <constraint firstItem="wp3-q7-Jj8" firstAttribute="leading" secondItem="dFK-hQ-E2O" secondAttribute="leadingMargin" id="wXo-PD-FdV"/>
+                                <constraint firstItem="wp3-q7-Jj8" firstAttribute="trailing" secondItem="dFK-hQ-E2O" secondAttribute="trailingMargin" id="3Ls-Ak-Lnk"/>
+                                <constraint firstItem="wp3-q7-Jj8" firstAttribute="centerY" secondItem="dFK-hQ-E2O" secondAttribute="centerY" id="Jwr-4U-PbJ"/>
+                                <constraint firstItem="wp3-q7-Jj8" firstAttribute="top" secondItem="dFK-hQ-E2O" secondAttribute="topMargin" constant="7" id="Kq1-sN-nAm"/>
+                                <constraint firstItem="wp3-q7-Jj8" firstAttribute="leading" secondItem="dFK-hQ-E2O" secondAttribute="leadingMargin" id="jSD-eE-Gzo"/>
                             </constraints>
                             <connections>
                                 <outlet property="questionLabel" destination="wp3-q7-Jj8" id="dcn-D1-UmQ"/>
                             </connections>
                         </collectionReusableView>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Spacing" id="RJc-G1-SNf">
-                            <rect key="frame" x="0.0" y="209" width="600" height="55"/>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Spacing" id="RJc-G1-SNf" customClass="SpacingAndCommentsCollectionReusableView" customModule="Quota" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="209" width="600" height="95"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbZ-Db-xii">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="28"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTv-sR-jbZ">
+                                    <rect key="frame" x="8" y="17" width="84" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <outlet property="commentsLabel" destination="KTv-sR-jbZ" id="jfj-9A-fyb"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="IhX-MU-TOt" id="Fe0-nf-EB6"/>

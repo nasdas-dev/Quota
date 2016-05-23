@@ -14,6 +14,7 @@ import CloudKit
 class QuotaViewController: UICollectionViewController{
     // MARK: IBOUTLETS
 
+    
     @IBAction func touchedVoteCell(sender: UIButton) {
         
         let cell = sender.superview?.superview as! VoteCell
@@ -90,6 +91,7 @@ class QuotaViewController: UICollectionViewController{
         refresh.attributedTitle = NSAttributedString(string:"Pull to refresh")
         refresh.addTarget(self, action: #selector(QuotaViewController.loadData), forControlEvents: .ValueChanged)
         self.collectionView!.addSubview(refresh)
+       
         loadData()
 
 
@@ -174,7 +176,7 @@ class QuotaViewController: UICollectionViewController{
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! VoteCell
       
         cell.layer.cornerRadius = 16.0
-
+        
         
         // This should give you the string that you want.
         let myString = votesContent![indexPath.item]
@@ -185,13 +187,14 @@ class QuotaViewController: UICollectionViewController{
 
         
         cell.updateVoteCount(indexPath, pollVotes: pollVotes)
-
+        
         //
 //        let totalAmountOfVotes = addAllVotes(pollVotes)
 //        cell.progressView.progress = Float((pollVotes[(indexPath.row)]))/Float(totalAmountOfVotes) //MAGIC
 //        
         
         print(myString)
+    
         return cell
         
 
@@ -220,6 +223,12 @@ class QuotaViewController: UICollectionViewController{
     }
     
     
+
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        print("selected cell: \(cell)")
+    
+    }
     
 
 }
