@@ -23,7 +23,7 @@ protocol titleEnteredDelegate {
     func userEnteredTitle(title: String)
 }
 
-class TitleViewController: UIViewController {
+class TitleViewController: UIViewController, UITextViewDelegate {
     var titleDelegate: titleEnteredDelegate!
     
 
@@ -59,6 +59,7 @@ class TitleViewController: UIViewController {
         super.viewDidLoad()
         questionSetup()
         self.hideKeyboardWhenTappedAround()
+        contentTextView.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -74,7 +75,33 @@ class TitleViewController: UIViewController {
 
     }
 
-   
+    func textViewDidChange(textView: UITextView) {
+        
+        var lblNumber = Int(characterLimitLabel.text!)
+        
+        let lblNumberUpdate = textView.text.characters.count
+        
+        lblNumber = 100 - lblNumberUpdate
+        characterLimitLabel.text = String(lblNumber!)
+        
+        if (lblNumber <= 20){
+            characterLimitLabel.textColor = UIColor.redColor()
+        }
+        else{
+        
+            characterLimitLabel.textColor = UIColor.blackColor()
+        }
+        
+        if (lblNumber == 0){
+            characterLimitLabel.textColor = UIColor.grayColor()
+        }
+        
+    }
+  
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        return textView.text.characters.count + (text.characters.count - range.length) <= 100
+
+    }
     
     func textViewDidChangeSelection(textView: UITextView) {
         if self.view.window != nil {
@@ -82,7 +109,10 @@ class TitleViewController: UIViewController {
                 textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
             }
         }
+
+    
     }
+    
     
         
     /*

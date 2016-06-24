@@ -12,6 +12,7 @@
 		E02ED8541CCE4A700093FFF6 /* QuotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */; };
 		E02ED8551CCE7E150093FFF6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02ED84F1CCE49000093FFF6 /* CloudKit.framework */; };
 		E040D2861CE689AD00F60433 /* ContainerViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040D2851CE689AD00F60433 /* ContainerViewTableViewController.swift */; };
+		E04951E11D19DC6700E2B668 /* NavtigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04951E01D19DC6700E2B668 /* NavtigationViewController.swift */; };
 		E05591F71CEE01D600E9C364 /* AddAnotherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05591F61CEE01D600E9C364 /* AddAnotherTableViewCell.swift */; };
 		E057FEFE1CF2528E0087FBDE /* SelectedPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E057FEFD1CF2528E0087FBDE /* SelectedPollViewController.swift */; };
 		E057FF011CF255330087FBDE /* SpacingAndCommentsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E057FF001CF255330087FBDE /* SpacingAndCommentsCollectionReusableView.swift */; };
@@ -35,6 +36,7 @@
 		E02ED84F1CCE49000093FFF6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotaViewController.swift; sourceTree = SOURCE_ROOT; };
 		E040D2851CE689AD00F60433 /* ContainerViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewTableViewController.swift; sourceTree = "<group>"; };
+		E04951E01D19DC6700E2B668 /* NavtigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavtigationViewController.swift; sourceTree = "<group>"; };
 		E05591F61CEE01D600E9C364 /* AddAnotherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnotherTableViewCell.swift; sourceTree = "<group>"; };
 		E057FEFD1CF2528E0087FBDE /* SelectedPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedPollViewController.swift; sourceTree = "<group>"; };
 		E057FF001CF255330087FBDE /* SpacingAndCommentsCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingAndCommentsCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				E02ED8531CCE4A700093FFF6 /* QuotaViewController.swift */,
 				E057FEFD1CF2528E0087FBDE /* SelectedPollViewController.swift */,
+				E04951E01D19DC6700E2B668 /* NavtigationViewController.swift */,
 				E057FEFF1CF252980087FBDE /* PollCollectionViewSettings */,
 				E07724361CE7DD870048A886 /* Submission */,
 				AF394D7B1CD2B56F00C9D2EA /* PopUpView.xib */,
@@ -297,6 +300,7 @@
 				E02ED8541CCE4A700093FFF6 /* QuotaViewController.swift in Sources */,
 				E05591F71CEE01D600E9C364 /* AddAnotherTableViewCell.swift in Sources */,
 				E0918CDB1CEA0CFE00C9A5D3 /* TagsViewController.swift in Sources */,
+				E04951E11D19DC6700E2B668 /* NavtigationViewController.swift in Sources */,
 				E040D2861CE689AD00F60433 /* ContainerViewTableViewController.swift in Sources */,
 				E0E279AC1CCD6672002D678E /* AppDelegate.swift in Sources */,
 			);
