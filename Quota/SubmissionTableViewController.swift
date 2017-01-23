@@ -25,11 +25,11 @@ class SubmissionTableViewController: UITableViewController, titleEnteredDelegate
     var dataToReceiveFromCategory = "Set a category."
     var dataToReceiveFromTags = "Add some tags."
 
-    func userEnteredTitle(title: String) {
+    func userEnteredTitle(_ title: String) {
             titleCell.detailTextLabel?.text = title
     }
     
-    func userSetCategory(category: String){
+    func userSetCategory(_ category: String){
             categoryCell.detailTextLabel?.text = category
     }
     
@@ -55,17 +55,17 @@ class SubmissionTableViewController: UITableViewController, titleEnteredDelegate
         // Dispose of any resources that can be recreated.
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TitleSegue"{
         
-            let titleVC = segue.destinationViewController as! TitleViewController
+            let titleVC = segue.destination as! TitleViewController
             titleVC.titleDelegate = self
         
             
         }
         if segue.identifier == "SetCategory"{
             
-            let pickerVC = segue.destinationViewController as! PickerViewController
+            let pickerVC = segue.destination as! PickerViewController
             pickerVC.pickerDelegate = self
             
             

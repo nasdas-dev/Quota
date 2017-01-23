@@ -7,6 +7,30 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 // Put this piece of code anywhere you like
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -20,7 +44,7 @@ extension UIViewController {
 }
 
 protocol titleEnteredDelegate {
-    func userEnteredTitle(title: String)
+    func userEnteredTitle(_ title: String)
 }
 
 class TitleViewController: UIViewController, UITextViewDelegate {
@@ -30,17 +54,17 @@ class TitleViewController: UIViewController, UITextViewDelegate {
     
     //MARK: IBOUTLETS
     
-    @IBAction func cancelButton(sender: UIBarButtonItem) {
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         
         
         
     }
     
     
-    @IBAction func saveButton(sender: UIBarButtonItem) {
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {
             let information = contentTextView.text
-            titleDelegate.userEnteredTitle(information)
-            self.navigationController?.popViewControllerAnimated(true)
+            titleDelegate.userEnteredTitle(information!)
+            self.navigationController?.popViewController(animated: true)
     
             
         
@@ -71,11 +95,11 @@ class TitleViewController: UIViewController, UITextViewDelegate {
     func questionSetup(){
         contentTextView.becomeFirstResponder()
         
-        contentTextView.selectedTextRange = contentTextView.textRangeFromPosition(contentTextView.beginningOfDocument, toPosition: contentTextView.beginningOfDocument)
+        contentTextView.selectedTextRange = contentTextView.textRange(from: contentTextView.beginningOfDocument, to: contentTextView.beginningOfDocument)
 
     }
 
-    func textViewDidChange(textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         
         var lblNumber = Int(characterLimitLabel.text!)
         
@@ -85,28 +109,28 @@ class TitleViewController: UIViewController, UITextViewDelegate {
         characterLimitLabel.text = String(lblNumber!)
         
         if (lblNumber <= 20){
-            characterLimitLabel.textColor = UIColor.redColor()
+            characterLimitLabel.textColor = UIColor.red
         }
         else{
         
-            characterLimitLabel.textColor = UIColor.blackColor()
+            characterLimitLabel.textColor = UIColor.black
         }
         
         if (lblNumber == 0){
-            characterLimitLabel.textColor = UIColor.grayColor()
+            characterLimitLabel.textColor = UIColor.gray
         }
         
     }
   
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         return textView.text.characters.count + (text.characters.count - range.length) <= 100
 
     }
     
-    func textViewDidChangeSelection(textView: UITextView) {
+    func textViewDidChangeSelection(_ textView: UITextView) {
         if self.view.window != nil {
-            if textView.textColor == UIColor.lightGrayColor() {
-                textView.selectedTextRange = textView.textRangeFromPosition(textView.beginningOfDocument, toPosition: textView.beginningOfDocument)
+            if textView.textColor == UIColor.lightGray {
+                textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
             }
         }
 

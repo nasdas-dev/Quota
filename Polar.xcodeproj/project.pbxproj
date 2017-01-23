@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E02ED8541CCE4A700093FFF6 /* PolarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02ED8531CCE4A700093FFF6 /* PolarViewController.swift */; };
+		E02ED8551CCE7E150093FFF6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02ED84F1CCE49000093FFF6 /* CloudKit.framework */; };
+		E040D2861CE689AD00F60433 /* ContainerViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040D2851CE689AD00F60433 /* ContainerViewTableViewController.swift */; };
+		E04951E11D19DC6700E2B668 /* NavtigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04951E01D19DC6700E2B668 /* NavtigationViewController.swift */; };
+		E05591F71CEE01D600E9C364 /* AddAnotherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05591F61CEE01D600E9C364 /* AddAnotherTableViewCell.swift */; };
+		E057FEFE1CF2528E0087FBDE /* SelectedPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E057FEFD1CF2528E0087FBDE /* SelectedPollViewController.swift */; };
+		E057FF011CF255330087FBDE /* SpacingAndCommentsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E057FF001CF255330087FBDE /* SpacingAndCommentsCollectionReusableView.swift */; };
+		E07724381CE7DE9A0048A886 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07724371CE7DE9A0048A886 /* TitleViewController.swift */; };
+		E0775EEF1CE6148F0061BFB1 /* SubmissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0775EEE1CE6148F0061BFB1 /* SubmissionTableViewController.swift */; };
+		E0918CDB1CEA0CFE00C9A5D3 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0918CDA1CEA0CFE00C9A5D3 /* TagsViewController.swift */; };
+		E0A237F21CD9717F00417172 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A237F11CD9717F00417172 /* PickerViewController.swift */; };
+		E0C732081CD8F15500D5D105 /* VoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C732071CD8F15500D5D105 /* VoteCell.swift */; };
+		E0D5092A1CE0FF4500AB68BB /* QuestionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D509291CE0FF4500AB68BB /* QuestionReusableView.swift */; };
+		E0E279AC1CCD6672002D678E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E279AB1CCD6672002D678E /* AppDelegate.swift */; };
+		E0E279B11CCD6672002D678E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E279AF1CCD6672002D678E /* Main.storyboard */; };
+		E0E279B41CCD6672002D678E /* Quota.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0E279B21CCD6672002D678E /* Quota.xcdatamodeld */; };
+		E0E279B61CCD6672002D678E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E279B51CCD6672002D678E /* Assets.xcassets */; };
+		E0E279B91CCD6672002D678E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E279B71CCD6672002D678E /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E02ED84F1CCE49000093FFF6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E02ED8531CCE4A700093FFF6 /* PolarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarViewController.swift; sourceTree = SOURCE_ROOT; };
+		E040D2851CE689AD00F60433 /* ContainerViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewTableViewController.swift; sourceTree = "<group>"; };
+		E04951E01D19DC6700E2B668 /* NavtigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavtigationViewController.swift; sourceTree = "<group>"; };
+		E05591F61CEE01D600E9C364 /* AddAnotherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnotherTableViewCell.swift; sourceTree = "<group>"; };
+		E057FEFD1CF2528E0087FBDE /* SelectedPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedPollViewController.swift; sourceTree = "<group>"; };
+		E057FF001CF255330087FBDE /* SpacingAndCommentsCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingAndCommentsCollectionReusableView.swift; sourceTree = "<group>"; };
+		E07724371CE7DE9A0048A886 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		E0775EEE1CE6148F0061BFB1 /* SubmissionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmissionTableViewController.swift; sourceTree = "<group>"; };
+		E0918CDA1CEA0CFE00C9A5D3 /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
+		E0A237F11CD9717F00417172 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		E0C732071CD8F15500D5D105 /* VoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteCell.swift; sourceTree = "<group>"; };
+		E0D509291CE0FF4500AB68BB /* QuestionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionReusableView.swift; sourceTree = "<group>"; };
+		E0E279A81CCD6672002D678E /* Polar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Polar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E279AB1CCD6672002D678E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E0E279B01CCD6672002D678E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0E279B31CCD6672002D678E /* Quota.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quota.xcdatamodel; sourceTree = "<group>"; };
+		E0E279B51CCD6672002D678E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0E279B81CCD6672002D678E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E0E279BA1CCD6672002D678E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E279C01CCD769E002D678E /* Quota.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Quota.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0E279A51CCD6672002D678E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E02ED8551CCE7E150093FFF6 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF6E99EA48BD70342B053ECB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E057FEFF1CF252980087FBDE /* PollCollectionViewSettings */ = {
+			isa = PBXGroup;
+			children = (
+				E0C732071CD8F15500D5D105 /* VoteCell.swift */,
+				E057FF001CF255330087FBDE /* SpacingAndCommentsCollectionReusableView.swift */,
+				E0D509291CE0FF4500AB68BB /* QuestionReusableView.swift */,
+			);
+			name = PollCollectionViewSettings;
+			sourceTree = "<group>";
+		};
+		E07724361CE7DD870048A886 /* Submission */ = {
+			isa = PBXGroup;
+			children = (
+				E0775EEE1CE6148F0061BFB1 /* SubmissionTableViewController.swift */,
+				E040D2851CE689AD00F60433 /* ContainerViewTableViewController.swift */,
+				E0A237F11CD9717F00417172 /* PickerViewController.swift */,
+				E07724371CE7DE9A0048A886 /* TitleViewController.swift */,
+				E05591F61CEE01D600E9C364 /* AddAnotherTableViewCell.swift */,
+				E0918CDA1CEA0CFE00C9A5D3 /* TagsViewController.swift */,
+			);
+			name = Submission;
+			sourceTree = "<group>";
+		};
+		E0CBD2401CD11E54007BD80F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0E279C01CCD769E002D678E /* Quota.entitlements */,
+				E0E279AB1CCD6672002D678E /* AppDelegate.swift */,
+				E0E279B71CCD6672002D678E /* LaunchScreen.storyboard */,
+				E0E279BA1CCD6672002D678E /* Info.plist */,
+				E0E279B21CCD6672002D678E /* Quota.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E0E2799F1CCD6672002D678E = {
+			isa = PBXGroup;
+			children = (
+				E02ED84F1CCE49000093FFF6 /* CloudKit.framework */,
+				E0E279AA1CCD6672002D678E /* Quota */,
+				E0E279A91CCD6672002D678E /* Products */,
+				CF6E99EA48BD70342B053ECB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E0E279A91CCD6672002D678E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0E279A81CCD6672002D678E /* Polar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0E279AA1CCD6672002D678E /* Quota */ = {
+			isa = PBXGroup;
+			children = (
+				E02ED8531CCE4A700093FFF6 /* PolarViewController.swift */,
+				E057FEFD1CF2528E0087FBDE /* SelectedPollViewController.swift */,
+				E04951E01D19DC6700E2B668 /* NavtigationViewController.swift */,
+				E057FEFF1CF252980087FBDE /* PollCollectionViewSettings */,
+				E07724361CE7DD870048A886 /* Submission */,
+				E0E279AF1CCD6672002D678E /* Main.storyboard */,
+				E0E279B51CCD6672002D678E /* Assets.xcassets */,
+				E0CBD2401CD11E54007BD80F /* Supporting Files */,
+			);
+			path = Quota;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0E279A71CCD6672002D678E /* Polar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0E279BD1CCD6672002D678E /* Build configuration list for PBXNativeTarget "Polar" */;
+			buildPhases = (
+				E0E279A41CCD6672002D678E /* Sources */,
+				E0E279A51CCD6672002D678E /* Frameworks */,
+				E0E279A61CCD6672002D678E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Polar;
+			productName = Quota;
+			productReference = E0E279A81CCD6672002D678E /* Polar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0E279A01CCD6672002D678E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = nasdas;
+				TargetAttributes = {
+					E0E279A71CCD6672002D678E = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8R2A3U44X6;
+						LastSwiftMigration = 0820;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = E0E279A31CCD6672002D678E /* Build configuration list for PBXProject "Polar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0E2799F1CCD6672002D678E;
+			productRefGroup = E0E279A91CCD6672002D678E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0E279A71CCD6672002D678E /* Polar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0E279A61CCD6672002D678E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0E279B91CCD6672002D678E /* LaunchScreen.storyboard in Resources */,
+				E0E279B61CCD6672002D678E /* Assets.xcassets in Resources */,
+				E0E279B11CCD6672002D678E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E0E279A41CCD6672002D678E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E057FEFE1CF2528E0087FBDE /* SelectedPollViewController.swift in Sources */,
+				E0E279B41CCD6672002D678E /* Quota.xcdatamodeld in Sources */,
+				E057FF011CF255330087FBDE /* SpacingAndCommentsCollectionReusableView.swift in Sources */,
+				E07724381CE7DE9A0048A886 /* TitleViewController.swift in Sources */,
+				E0D5092A1CE0FF4500AB68BB /* QuestionReusableView.swift in Sources */,
+				E0775EEF1CE6148F0061BFB1 /* SubmissionTableViewController.swift in Sources */,
+				E0C732081CD8F15500D5D105 /* VoteCell.swift in Sources */,
+				E0A237F21CD9717F00417172 /* PickerViewController.swift in Sources */,
+				E02ED8541CCE4A700093FFF6 /* PolarViewController.swift in Sources */,
+				E05591F71CEE01D600E9C364 /* AddAnotherTableViewCell.swift in Sources */,
+				E0918CDB1CEA0CFE00C9A5D3 /* TagsViewController.swift in Sources */,
+				E04951E11D19DC6700E2B668 /* NavtigationViewController.swift in Sources */,
+				E040D2861CE689AD00F60433 /* ContainerViewTableViewController.swift in Sources */,
+				E0E279AC1CCD6672002D678E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E0E279AF1CCD6672002D678E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0E279B01CCD6672002D678E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E0E279B71CCD6672002D678E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0E279B81CCD6672002D678E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E0E279BB1CCD6672002D678E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E0E279BC1CCD6672002D678E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0E279BE1CCD6672002D678E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Quota/Quota.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8R2A3U44X6;
+				INFOPLIST_FILE = Quota/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nasdas.das.Polar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E0E279BF1CCD6672002D678E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Quota/Quota.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8R2A3U44X6;
+				INFOPLIST_FILE = Quota/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nasdas.das.Polar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0E279A31CCD6672002D678E /* Build configuration list for PBXProject "Polar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0E279BB1CCD6672002D678E /* Debug */,
+				E0E279BC1CCD6672002D678E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0E279BD1CCD6672002D678E /* Build configuration list for PBXNativeTarget "Polar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0E279BE1CCD6672002D678E /* Debug */,
+				E0E279BF1CCD6672002D678E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E0E279B21CCD6672002D678E /* Quota.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E0E279B31CCD6672002D678E /* Quota.xcdatamodel */,
+			);
+			currentVersion = E0E279B31CCD6672002D678E /* Quota.xcdatamodel */;
+			path = Quota.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E0E279A01CCD6672002D678E /* Project object */;
+}

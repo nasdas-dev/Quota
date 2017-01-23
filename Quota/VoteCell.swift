@@ -37,9 +37,9 @@ class VoteCell: UICollectionViewCell{
 //    }
 //    
     
-    func updateVoteCount(indexPath: NSIndexPath, pollVotes: [Int]) {
+    func updateVoteCount(_ indexPath: IndexPath, pollVotes: [Int]) {
 
-        let totalAmountOfVotes = QuotaViewController().addAllVotes(pollVotes)
+        let totalAmountOfVotes = PolarViewController().addAllVotes(pollVotes)
         
         progressView.progress = Float((pollVotes[(indexPath.row)]))/Float(totalAmountOfVotes) //MAGIC
         
@@ -49,9 +49,9 @@ class VoteCell: UICollectionViewCell{
     
     
 
-    func nameVoteOptions(name: String){
+    func nameVoteOptions(_ name: String){
      
-        cellLabel.setTitle(name, forState: .Normal)
+        cellLabel.setTitle(name, for: UIControlState())
     
     }
     

@@ -12,18 +12,21 @@ import UIKit
 
 class ContainerViewTableViewController: UITableViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
     
-    @IBAction func addOtherAnswerButton(sender: UIButton) {
+    @IBAction func addOtherAnswerButton(_ sender: UIButton) {
+        addAnswer()
+    }
+    
+    func addAnswer(){
+    
+        let indexPath = IndexPath(row: votingOptions.count, section: 0)
+        votingOptions.append("p3")
+        tableView.insertRows(at: [indexPath], with: .automatic)
 
-        let newString = AddAnotherTableViewCell().addAnswerTextField.text
-        votingOptions.append(newString!)
-        tableView.beginUpdates()
-        print(votingOptions)
-        
+    
     }
     
     
-    var votingOptions = ["Voting Option 1", "Voting Option 2", "Voting Option 3", "Voting Option 4"]
-    var hideCellAllowed: Bool! = false
+    var votingOptions = ["p1", "p2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +36,7 @@ class ContainerViewTableViewController: UITableViewController, UIGestureRecogniz
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let longpress = UILongPressGestureRecognizer(target: self, action: #selector(ContainerViewTableViewController.longPressGestureRecognized(_:)))
-        tableView.addGestureRecognizer(longpress)
-        
+        tableView.setEditing(true, animated: true)
     }
     
     
@@ -45,222 +46,92 @@ class ContainerViewTableViewController: UITableViewController, UIGestureRecogniz
     }
     
     
-    func longPressGestureRecognized(gestureRecognizer: UIGestureRecognizer) {
-        struct My {
-            
-            static var cellSnapshot : UIView? = nil
-            
-        }
-        struct Path {
-            
-            static var initialIndexPath : NSIndexPath? = nil
-            
-        }
-        
-        
-        
-        let longPress = gestureRecognizer as! UILongPressGestureRecognizer
-        
-        let state = longPress.state
-        
-        let locationInView = longPress.locationInView(tableView)
-        
-        let indexPath = tableView.indexPathForRowAtPoint(locationInView)
-        
-        
-        
-        
-        switch state {
-            
-            
-        case UIGestureRecognizerState.Changed:
-            if indexPath != nil{
-                var center = My.cellSnapshot!.center
-                
-                center.y = locationInView.y
-                
-                My.cellSnapshot!.center = center
-                
-                if ((indexPath != nil) && (indexPath != Path.initialIndexPath)) {
-                    
-                    swap(&votingOptions[indexPath!.row], &votingOptions[Path.initialIndexPath!.row])
-                    
-                    tableView.moveRowAtIndexPath(Path.initialIndexPath!, toIndexPath: indexPath!)
-                    
-                    Path.initialIndexPath = indexPath
-                    
-                }
-               
-            }
-            
-        case UIGestureRecognizerState.Began:
-            
-            
-            if indexPath != nil && indexPath!.section == 0{
-                
-                Path.initialIndexPath = indexPath
-                
-                let cell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!
-                
-                My.cellSnapshot  = snapshopOfCell(cell)
-                
-                var center = cell.center
-                
-                My.cellSnapshot!.center = center
-                
-                My.cellSnapshot!.alpha = 0.0
-                
-                tableView.addSubview(My.cellSnapshot!)
-                cell.hidden = true
-                
-                
-                UIView.animateWithDuration(0.25, animations: { () -> Void in
-                    
-                    center.y = locationInView.y
-                    
-                    My.cellSnapshot!.center = center
-                    
-                    My.cellSnapshot!.transform = CGAffineTransformMakeScale(1.05, 1.05)
-                    
-                    My.cellSnapshot!.alpha = 0.98
-                    
-                    cell.alpha = 0.0
-                    
-                    
-                    
-                    }, completion: { (finished) -> Void in
-                        
-                        if finished && self.hideCellAllowed == true {
-                            cell.hidden = true
-                        }
-                        
-                })
-            }
-            
-            
-            
-            
-            
-        default:
-            
-            
-            hideCellAllowed = false
-            if indexPath != nil && indexPath!.section == 0{
-                let cell = tableView.cellForRowAtIndexPath(Path.initialIndexPath!) as UITableViewCell!
-                
-                cell.hidden = false
-                
-                cell.alpha = 0.0
-                
-                UIView.animateWithDuration(0.25, animations: { () -> Void in
-                    
-                    My.cellSnapshot!.center = cell.center
-                    
-                    My.cellSnapshot!.transform = CGAffineTransformIdentity
-                    
-                    My.cellSnapshot!.alpha = 0.0
-                    
-                    cell.alpha = 1.0
-                    
-                    }, completion: { (finished) -> Void in
-                        
-                        if finished {
-                            
-                            Path.initialIndexPath = nil
-                            
-                            My.cellSnapshot!.removeFromSuperview()
-                            
-                            My.cellSnapshot = nil
-                            
-                        }
-                        
-                })
-            }}
-        
-    }
-    func snapshopOfCell(inputView: UIView) -> UIView {
-        UIGraphicsBeginImageContextWithOptions(inputView.bounds.size, false, 0.0)
-        
-        inputView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        
-        let image = UIGraphicsGetImageFromCurrentImageContext() as UIImage
-        
-        UIGraphicsEndImageContext()
-        
-        let cellSnapshot : UIView = UIImageView(image: image)
-        
-        cellSnapshot.layer.masksToBounds = false
-        
-        cellSnapshot.layer.cornerRadius = 10.0
-        
-        cellSnapshot.layer.shadowOffset = CGSizeMake(-5.0, 0.0)
-        
-        cellSnapshot.layer.shadowRadius = 5.0
-        
-        cellSnapshot.layer.shadowOpacity = 0.4
-        
-        return cellSnapshot
-        
-    }
-    
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let numberOfRowsAtSection = [votingOptions.count, 1]
-        
-        return numberOfRowsAtSection[section]
+  
+        return votingOptions.count+1
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var displayCell:UITableViewCell?
         displayCell = nil
-        let cell = tableView.dequeueReusableCellWithIdentifier("VotingOptionsSubmission")
-        
-        cell!.textLabel?.text = votingOptions[indexPath.row]
-        
-        
-        
-        let cell2 = tableView.dequeueReusableCellWithIdentifier("addOther")
-        
-        // Configure the cell...
-        
-        if indexPath.section == 0 {
-            displayCell = cell
+        let addCell = tableView.dequeueReusableCell(withIdentifier: "addOther")
+
+        let addedCell = tableView.dequeueReusableCell(withIdentifier: "existingAnswer")
+        if indexPath.row == votingOptions.count{
+            displayCell = addCell
         }
-        if indexPath.section == 1 {
-            displayCell = cell2
+        else{
+            displayCell = addedCell
         }
-        
         return displayCell!
     }
     
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row == votingOptions.count {
+            return false
+        }
+        else{
+            return true
+        }
+
+    }
     
-    
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.section != 0{
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row == (votingOptions.count){
             return false
         }
         return true
         
     }
+    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        var actualIndexPath = IndexPath()
+        if (proposedDestinationIndexPath.row == votingOptions.count){
+            print("1")
+            actualIndexPath = sourceIndexPath
+
+        }
+        else{
+            actualIndexPath = proposedDestinationIndexPath
+        }
+        
+        return actualIndexPath
+    }
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.none
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == votingOptions.count){
+        
+            addAnswer()
+
+        }
+        print("tapped")
+    }
     
     
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            votingOptions.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+            votingOptions.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
@@ -268,8 +139,8 @@ class ContainerViewTableViewController: UITableViewController, UIGestureRecogniz
     
     
     // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to toIndexPath: IndexPath) {
+
         
     }
     

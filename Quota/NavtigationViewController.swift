@@ -20,7 +20,7 @@ class NavtigationViewController: UINavigationController {
 //        navigationBar.addSubview(blurEffectView)
 //        
 //        
-        self.navigationBar.translucent = true
+        self.navigationBar.isTranslucent = true
         self.navigationBar.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.4)
         // Do any additional setup after loading the view.
     }
