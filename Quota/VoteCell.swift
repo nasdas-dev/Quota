@@ -42,7 +42,30 @@ class VoteCell: UICollectionViewCell{
         let totalAmountOfVotes = PolarViewController().addAllVotes(pollVotes)
         
         progressView.progress = Float((pollVotes[(indexPath.row)]))/Float(totalAmountOfVotes) //MAGIC
+
         
+        //Gradient color
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.frame
+        
+        gradientLayer.anchorPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.position = CGPoint(x: 0, y: 0)
+        
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0);
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0);
+        
+        gradientLayer.colors = [
+            UIColor.red,
+            UIColor.green
+        ]
+        
+        
+        
+        // Convert to UIImage
+        progressView.layer.insertSublayer(gradientLayer, at: 0)
+        progressView.progressTintColor = UIColor.clear
+        progressView.trackTintColor = UIColor.black
+
 
     }
     
